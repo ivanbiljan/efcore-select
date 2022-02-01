@@ -22,7 +22,7 @@ Console.WriteLine($"{nameof(queryable)} is IOrderedQueryable: {Check(queryable)}
 Console.WriteLine($"{nameof(queryableNoAnonSelect)} is IOrderedQueryable: {Check(queryableNoAnonSelect)}");
 Console.WriteLine($"{nameof(dbSet)} is IOrderedQueryable: {Check(dbSet)}");
 
-bool Check<T>(IQueryable<T> queryable) => queryable is IOrderedQueryable<T>;
+static bool Check<T>(IQueryable<T> source) => source is IOrderedQueryable<T>;
 
 public class Entity
 {
